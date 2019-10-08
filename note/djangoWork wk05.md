@@ -243,7 +243,7 @@ admin.site.register(Post)
   - "초보자(Beginner)" 회원가입
   - git clone 작업
     ```
-    $ git clone https://github.com/<your-github-username>/my-first-blog.git
+    $ git clone https://github.com/<your-github-username>/my-first-blog.git https://github.com/<your-github-username>/my-first-blog.git
     $ cd my-first-blog
     $ virtualenv --python=python3.6 myvenv
     $ source myvenv/bin/activate
