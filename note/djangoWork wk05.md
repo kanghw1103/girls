@@ -243,18 +243,18 @@ admin.site.register(Post)
   - "초보자(Beginner)" 회원가입
   - git clone 작업
     ```
-    $ git clone https://github.com/<your-github-username>/my-first-blog.git https://github.com/<your-github-username>/my-first-blog.git
+    $ git clone https://github.com/<your-github-username>/my-first-blog.git
     $ cd my-first-blog
     $ virtualenv --python=python3.6 myvenv
     $ source myvenv/bin/activate
-    (myvenv) $  pip install django~=1.11.0
+    (myvenv) $ pip install django~=1.11.0
     (myvenv) $ python manage.py migrate
     (myvenv) $ python manage.py createsuperuser
     ```
   - 웹 앱으로 블로그 배포
     - 대시보드에서 Web 클릭하고, Add a new web app 선택
     - 수동설정(manual configuration) ("Django"옵션이 아님!) 클릭
-    - Python 3.6 선택하고 다음 클릭
+    - Python 3.7 선택하고 다음 클릭
   - 가상환경 설정
     ![](https://tutorial.djangogirls.org/ko/deploy/images/pythonanywhere_web_tab_virtualenv.png)
   - WSGI 파일 설정
