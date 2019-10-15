@@ -1,11 +1,20 @@
 <!DOCTYPE html>
+{% load static %}  {# 템플릿 태그로 정적파일을 메모리로 불러들인다는 명령 #}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>블로그 글 목록</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Gugi" rel="stylesheet">
+
 </head>
 <body>
-    <h1><a href="">장고 걸스 블로그</a></h1>
+<div class="page-header">
+    <h1><a href="/">장고 걸스 블로그</a></h1>
+</div>
+<!--    장고 템플릿 언어라고 구글링-->
     {% commant %}
     {{ posts }} <br/><br/>   {# 이게 장고 템플릿 변수(변수의 내용을 출력할 때 사용) #}
     {# 아래 루프 처리 부분이 장고 템플릿 태그 #}
@@ -13,13 +22,18 @@
         {{post}}<br/>
     {% endfor %}             {# 여기까지 for 루프 끝 #}
     {% endcommant %}
-
-    {% for post in posts %}
-    <div>
-        <h2><a href="">{{ post.title }}</a></h2>
-        <p>게시일시: {{ post.published_date }}</p>
-        <p>{{ post.text|linebreaksbr }}</p>
+    <div class="content container">
+        <div class="row">
+           <div class="col-md-8">  <!-- 부트스트랩 그리드 시스템-->
+                {% for post in posts %}
+                <div class="post">
+                    <h2><a href="">{{ post.title }}</a></h2>
+                    <p>게시일시: {{ post.published_date }}</p>
+                    <p>{{ post.text|linebreaksbr }}</p>
+                </div>
+                {% endfor %}
+           </div>
+        </div>
     </div>
-    {% endfor %}
 </body>
 </html>
